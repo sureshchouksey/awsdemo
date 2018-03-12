@@ -10,6 +10,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2"
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.15.1",
+    "config": "^1.20.1",
+    "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
+    "express": "^4.13.4",
+    "fcm-node": "^1.2.0",
+    "jsonwebtoken": "^8.1.0",
+    "log4js": "^2.3.11",
+    "mongoose": "^4.4.15",
+    "morgan": "^1.7.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.4.5"
   }
 }

@@ -1,40 +1,40 @@
-var express = require('express');
-var app = express();
 
-// This responds with "Hello World" on the homepage
-app.get('/', function (req, res) {
-   console.log("Got a GET request for the homepage");
-   res.send('Hello GET');
-})
+let express = require('express');
+let app = express();
+let mongoose = require('mongoose');
+let morgan = require('morgan');
+let bodyParser = require('body-parser');
+let port = process.env.PORT || 5000;
+let config = require('config'); //we load the db location from the JSON files
+let cors = require('cors');
+let dotenv = require('dotenv');
+//db options
+let options = { 
+				server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }, 
+                replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } } 
+              }; 
 
-// This responds a POST request for the homepage
-app.post('/', function (req, res) {
-   console.log("Got a POST request for the homepage");
-   res.send('Hello POST');
-})
+//db connection      
+mongoose.connect(config.DBHost, options);
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
 
-// This responds a DELETE request for the /del_user page.
-app.delete('/del_user', function (req, res) {
-   console.log("Got a DELETE request for /del_user");
-   res.send('Hello DELETE');
-})
+//don't show the log when it is test
+if(config.util.getEnv('NODE_ENV') !== 'test') {
+	//use morgan to log at command line
+	app.use(morgan('combined')); //'combined' outputs the Apache style LOGs
+}
 
-// This responds a GET request for the /list_user page.
-app.get('/list_user', function (req, res) {
-   console.log("Got a GET request for /list_user");
-   res.send('Page Listing');
-})
+//parse application/json and look for raw text
+dotenv.load({ path: '.env' });                                     
+app.use(bodyParser.json());                                     
+app.use(bodyParser.urlencoded({extended: true}));               
+app.use(bodyParser.text());                                    
+app.use(bodyParser.json({ type: 'application/json'}));  
 
-// This responds a GET request for abcd, abxcd, ab123cd, and so on
-app.get('/ab*cd', function(req, res) {   
-   console.log("Got a GET request for /ab*cd");
-   res.send('Page Pattern Match');
-})
+app.use(cors());
+require('./routes/user.routes.js')(app);
+app.listen(port);
+console.log("Listening on port " + port);
 
-var server = app.listen(8081, function () {
-
-   var host = server.address().address
-   var port = server.address().port
-
-   console.log("Example app listening at http://%s:%s", host, port)
-})
+module.exports = app; // for testing
