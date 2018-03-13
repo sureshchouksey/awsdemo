@@ -5,73 +5,49 @@ let jwt = require('jsonwebtoken');
 let User = require('../models/user');
 let config = require('config');
 let mongoose = require('mongoose');
+let Nexmo = require('nexmo');
 
-// exports.login = (req,res)=>{
-// 	console.log(req.body);
-// 	User.findOne({ phoneNumber: req.body.phoneNumber }, (err, user) => {
-//      console.log('result user',user);
-//       if (!user) { return res.sendStatus(403); }
-     
-//       user.comparePassword(req.body.password, (error, isMatch) => {
-//       	console.log('isMatch',isMatch,config.SECRET_TOKEN);
-//         if (!isMatch) { return res.sendStatus(403); }
-//         //const token = jwt.sign({ user: user }, config.SECRET_TOKEN); // , { expiresIn: 10 } seconds
-//         //console.log(token);
-//         let resultData = {
-//           phoneNumber :user.phoneNumber,
-//           email:user.email          
-//         }
-//         res.status(200).json(resultData);
-//       });
-//     });
+let nexmo = new Nexmo({
+  apiKey: '49f4ee41',
+  apiSecret: 'wJ4rAleyPO5f0DUI'
+})
 
-// }
+exports.sendMessage = (req,res)=>{
+  nexmo.message.sendSms(
+  9561508019, req.body.phoneNumber, req.body.message,
+    (err, responseData) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.dir(responseData);
+      }
+    }
+ );
+}
+
+
 
 exports.login = (req,res) =>{
   var phoneNumber = req.body.phoneNumber;
-   var password = req.body.password;
-
-  //  User.findOne({Email: email, Pass: pass}, (err, user)=> {
-  //     if(err) return next(err);
-  //     if(!user) return res.send('Not logged in!');
-
-  //     req.session.user = email;
-  //     return res.send('Logged In!);
-  //  });
+   var password = req.body.password;  
   User.findOne({phoneNumber:phoneNumber,password:password},(err,user)=>{
          if(err) return next(err);
-       if(!user) return res.send('Not logged in!');
+       if(!user) return res.send('Not logged in!');       
+       res.status(200).json({status:'success'});
+  })
+}
 
-       //req.session.user = email;
-
+exports.adminLogin = (req,res) =>{
+  var phoneNumber = req.body.phoneNumber;
+   var password = req.body.password;  
+  User.findOne({phoneNumber:phoneNumber,password:password,role:"admin"},(err,user)=>{
+         if(err) return next(err);
+       if(!user) return res.send('Not logged in!');       
        res.status(200).json({status:'success'});
   })
 }
 
 
-function authenticate(username, password) {
-    var deferred = Q.defer();
-
-    db.users.findOne({ username: username }, function (err, user) {
-        if (err) deferred.reject(err.name + ': ' + err.message);
-
-        if (user && bcrypt.compareSync(password, user.hash)) {
-            // authentication successful
-            deferred.resolve({
-                _id: user._id,
-                username: user.username,
-                firstName: user.firstName,
-                lastName: user.lastName,
-                token: jwt.sign({ sub: user._id }, config.secret)
-            });
-        } else {
-            // authentication failed
-            deferred.resolve();
-        }
-    });
-
-    return deferred.promise;
-}
 
  // Get all
   exports.getAll = (req, res) => {
@@ -152,4 +128,14 @@ function authenticate(username, password) {
     loggerinfo.info('All device sucessfully deleted!');
     res.sendStatus(200);
   })
+}
+
+exports.searchUser = (req, res) => {
+  //loggerinfo.info('Request body of searchUseer Service',req.body);
+  let searchUseer = req.body;
+  User.find(searchUseer, (err, docs) => {
+    if (err) { return loggererror.info(err); }
+    //loggerinfo.info('Search result based on device',docs);
+    res.json(docs);
+  });
 }

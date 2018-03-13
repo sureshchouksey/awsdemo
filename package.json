@@ -20,7 +20,8 @@
     "jsonwebtoken": "^8.1.0",
     "log4js": "^2.3.11",
     "mongoose": "^4.4.15",
-    "morgan": "^1.7.0"
+    "morgan": "^1.7.0",
+    "nexmo": "^2.2.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

@@ -14,7 +14,9 @@ var userSchema = mongoose.Schema({
   landmark:{ type: String,trim: true,require:true,default:'' },
   pincode:{ type: Number,trim: true,require:true},
   city:{ type: String,trim: true,require:true,default:'' },
-  state:{ type: String,trim: true,require:true,default:'' } 
+  state:{ type: String,trim: true,require:true,default:'' },
+  role:{type:String},
+  couponCode:{type:String} 
   
 });
 
