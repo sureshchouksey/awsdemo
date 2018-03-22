@@ -33,17 +33,26 @@ exports.login = (req,res) =>{
   User.findOne({phoneNumber:phoneNumber,password:password},(err,user)=>{
          if(err) return next(err);
        if(!user) return res.send('Not logged in!');       
-       res.status(200).json({status:'success'});
+        res.status(200).json({status:'success',role:user.role});
   })
 }
 
 exports.adminLogin = (req,res) =>{
-  var phoneNumber = req.body.phoneNumber;
+  console.log(req.body);
+  var email = req.body.username;
    var password = req.body.password;  
-  User.findOne({phoneNumber:phoneNumber,password:password,role:"admin"},(err,user)=>{
+   console.log(email,password);
+  User.findOne({email:email,password:password,role:"admin"},(err,user)=>{
          if(err) return next(err);
-       if(!user) return res.send('Not logged in!');       
-       res.status(200).json({status:'success'});
+       if(!user) return res.send('Not logged in!'); 
+        const token = jwt.sign({ user: user }, config.SECRET_TOKEN); // , { expiresIn: 10 } seconds
+        console.log(token);      
+       let resultData = {
+          username :user.firstName + "" + user.lastName,
+          email:user.email,
+          token :token
+        }
+        res.status(200).json(resultData);
   })
 }
 
@@ -77,7 +86,7 @@ exports.adminLogin = (req,res) =>{
       if (err) {
         return console.error(err);
       }
-      res.json(item);
+      res.json({'status':'success'});
     });
   }
 
@@ -99,16 +108,17 @@ exports.adminLogin = (req,res) =>{
   // Update by id
   exports.update = (req, res) => {
     User.findOneAndUpdate({ _id: req.params.id }, req.body, (err) => {
-      if (err) { return console.error(err); }
-      res.sendStatus(200);
+      if (err) { return res.json({status:'fail'});; }
+      res.status(200).json({status:'success'});
     });
   }
 
   // Update by id
   exports.updatePIN = (req, res) => {
+    console.log(req.body);
     User.update({ phoneNumber: req.body.phoneNumber}, {$set:{password:req.body.mPin}}, (err) => {
-      if (err) { return console.error(err); }
-      res.sendStatus(200);
+      if (err) { return res.json({status:'fail'});; }
+      res.status(200).json({status:'success'});
     });
   }
 
