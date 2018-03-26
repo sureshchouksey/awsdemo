@@ -3,6 +3,7 @@
 let dotenv = require('dotenv');
 let jwt = require('jsonwebtoken');
 let User = require('../models/user');
+let Rates = require('../models/rates');
 let config = require('config');
 let mongoose = require('mongoose');
 let Nexmo = require('nexmo');
@@ -24,8 +25,6 @@ exports.sendMessage = (req,res)=>{
     }
  );
 }
-
-
 
 exports.login = (req,res) =>{
   var phoneNumber = req.body.phoneNumber;
@@ -132,13 +131,13 @@ exports.adminLogin = (req,res) =>{
   }
 
   exports.deleteAll = (req, res) => {
-  loggerinfo.info('Request body of deleteAll Service',req.body);
-  User.remove({}, (err) => {
-    if (err) { return loggererror.info(err); }
-    loggerinfo.info('All device sucessfully deleted!');
-    res.sendStatus(200);
-  })
-}
+    loggerinfo.info('Request body of deleteAll Service',req.body);
+    User.remove({}, (err) => {
+      if (err) { return loggererror.info(err); }
+      loggerinfo.info('All device sucessfully deleted!');
+      res.sendStatus(200);
+    })
+  }
 
 exports.searchUser = (req, res) => {
   //loggerinfo.info('Request body of searchUseer Service',req.body);
@@ -149,3 +148,44 @@ exports.searchUser = (req, res) => {
     res.json(docs);
   });
 }
+
+
+// Insert
+  exports.insertRates = (req, res) => {
+    const obj = new Rates(req.body);
+    obj.save((err, item) => {
+      // 11000 is the code for duplicate key error
+      console.log('item',item);
+      if (err && err.code === 11000) {
+        res.sendStatus(400);
+      }
+      if (err) {
+        return console.error(err);
+      }
+      res.json({'status':'success'});
+    });
+  }
+
+  // Get by id
+  exports.getRates = (req, res) => {    
+    Rates.findOne({}, (err, obj) => {
+      if (err) { return console.error(err); }
+      res.json(obj);
+    });
+  }
+
+  exports.deleteRates = (req, res) => {    
+    Rates.remove({}, (err) => {
+      if (err) { return loggererror.info(err); }      
+      res.sendStatus(200);
+    })
+  }
+
+  // Update by id
+  exports.updateRates = (req, res) => {
+    Rates.findOneAndUpdate({ masterKey: req.body.masterKey }, req.body, (err) => {
+      if (err) { return res.json({status:'fail'});; }
+      res.status(200).json({status:'success'});
+    });
+  }
+

@@ -16,7 +16,10 @@ var userSchema = mongoose.Schema({
   city:{ type: String,trim: true,require:true,default:'' },
   state:{ type: String,trim: true,require:true,default:'' },
   role:{type:String},
-  couponCode:{type:String} 
+  couponCode:{type:String},
+  addressType:{type:String},
+  quantityCapacity:{type:Number},
+  milkType:{type:String} 
   
 });
 

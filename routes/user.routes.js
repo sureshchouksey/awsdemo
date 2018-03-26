@@ -15,10 +15,12 @@ module.exports = function (app) {
   app.route('/api/user/search')
         .post(userCtrl.searchUser);
   app.route('/api/user/sendMessage')
-        .post(userCtrl.sendMessage);
-  //app.route('/api/user/deleteAll').delete(userCtrl.deleteAll);
+        .post(userCtrl.sendMessage);   
 
-  // Apply the routes to our application with the prefix /api
-  //app.use('/api', router);
-
+  app.route('/api/insertRates')
+        .post(userCtrl.insertRates);
+  app.route('/api/getRates').get(userCtrl.getRates);
+  app.route('/api/deleteRates').delete(userCtrl.deleteRates);
+  app.route('/api/updateRates').put(userCtrl.updateRates);
+  
 }
