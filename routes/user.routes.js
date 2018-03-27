@@ -15,7 +15,9 @@ module.exports = function (app) {
   app.route('/api/user/search')
         .post(userCtrl.searchUser);
   app.route('/api/user/sendMessage')
-        .post(userCtrl.sendMessage);   
+        .post(userCtrl.sendMessage);        
+  app.route('/api/user/changePassword')
+        .post(userCtrl.changePassword);   
 
   app.route('/api/insertRates')
         .post(userCtrl.insertRates);

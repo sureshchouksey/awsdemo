@@ -189,3 +189,30 @@ exports.searchUser = (req, res) => {
     });
   }
 
+
+  // Update by id
+  exports.changePassword = (req, res) => {
+    console.log('Body',req.body);
+
+     User.findOne({phoneNumber: req.body.phoneNumber,password:req.body.oldPassword},(err,user)=>{
+       console.log('user',user);
+        if (err) {  
+          
+          return res.json({status:'fail',err:err}); 
+        }
+        if(!user){
+            return res.json({status:'password is wrong'});
+        }
+        else{
+            User.update({ phoneNumber: req.body.phoneNumber}, {$set:{password:req.body.newPassword}}, (err) => {
+              if (err) { 
+                return res.json({status:'Update fail'});
+               }
+              res.status(200).json({status:'success'});
+            });
+        }        
+     });
+    
+    
+  }
+
