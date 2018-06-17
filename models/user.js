@@ -21,9 +21,10 @@ var userSchema = mongoose.Schema({
   state:{ type: String,trim: true,require:true,default:'' },
   role:{type:String},
   couponCode:{type:String},
-  profilePic: {type:String}
-
-  
+  profilePic: {type:String},
+  addressType:{type:String},
+  quantityCapacity:{type:Number},
+  milkType:{type:String} 
 });
 
 // Before saving the user, hash the password

@@ -4,6 +4,8 @@ let dotenv = require('dotenv');
 let jwt = require('jsonwebtoken');
 let User = require('../models/user');
 let Order = require('../models/order');
+let Rates = require('../models/rates');
+
 let config = require('config');
 let mongoose = require('mongoose');
 let Nexmo = require('nexmo');
@@ -28,25 +30,33 @@ exports.sendMessage = (req,res)=>{
  );
 }
 
-
-
 exports.login = (req,res) =>{
   var phoneNumber = req.body.phoneNumber;
    var password = req.body.password;  
   User.findOne({phoneNumber:phoneNumber,password:password},(err,user)=>{
          if(err) return next(err);
-       if(!user) return res.send('Not logged in!');       
-       res.json({'code':200,data:user});
+       if(!user) return res.send('Not logged in!'); 
+      res.json({code:200,role:user.role});
+
   })
 }
 
 exports.adminLogin = (req,res) =>{
-  var phoneNumber = req.body.phoneNumber;
+  console.log(req.body);
+  var email = req.body.username;
    var password = req.body.password;  
-  User.findOne({phoneNumber:phoneNumber,password:password,role:"admin"},(err,user)=>{
+   console.log(email,password);
+  User.findOne({email:email,password:password,role:"admin"},(err,user)=>{
          if(err) return next(err);
-       if(!user) return res.send('Not logged in!');       
-       res.status(200).json({status:'success'});
+       if(!user) return res.send('Not logged in!'); 
+        const token = jwt.sign({ user: user }, config.SECRET_TOKEN); // , { expiresIn: 10 } seconds
+        console.log(token);      
+       let resultData = {
+          username :user.firstName + "" + user.lastName,
+          email:user.email,
+          token :token
+        }
+        res.status(200).json(resultData);
   })
 }
 
@@ -87,7 +97,9 @@ exports.adminLogin = (req,res) =>{
       if (err) {
         return console.error(err);
       }
+
       res.json({'code':200,data:item});
+
     });
   }
 
@@ -109,16 +121,17 @@ exports.adminLogin = (req,res) =>{
   // Update by id
   exports.update = (req, res) => {
     User.findOneAndUpdate({ _id: req.params.id }, req.body, (err) => {
-      if (err) { return console.error(err); }
-      res.sendStatus(200);
+      if (err) { return res.json({status:'fail'});; }
+      res.status(200).json({status:'success'});
     });
   }
 
   // Update by id
   exports.updatePIN = (req, res) => {
+    console.log(req.body);
     User.update({ phoneNumber: req.body.phoneNumber}, {$set:{password:req.body.mPin}}, (err) => {
-      if (err) { return console.error(err); }
-      res.sendStatus(200);
+      if (err) { return res.json({status:'fail'});; }
+      res.status(200).json({status:'success'});
     });
   }
 
@@ -132,13 +145,13 @@ exports.adminLogin = (req,res) =>{
   }
 
   exports.deleteAll = (req, res) => {
-  loggerinfo.info('Request body of deleteAll Service',req.body);
-  User.remove({}, (err) => {
-    if (err) { return loggererror.info(err); }
-    loggerinfo.info('All device sucessfully deleted!');
-    res.sendStatus(200);
-  })
-}
+    loggerinfo.info('Request body of deleteAll Service',req.body);
+    User.remove({}, (err) => {
+      if (err) { return loggererror.info(err); }
+      loggerinfo.info('All device sucessfully deleted!');
+      res.sendStatus(200);
+    })
+  }
 
 exports.searchUser = (req, res) => {
   //loggerinfo.info('Request body of searchUseer Service',req.body);
@@ -150,10 +163,28 @@ exports.searchUser = (req, res) => {
   });
 }
 
-// Insert
+
   exports.saveOrder = (req, res) => {
  
     const obj = new Order(req.body);
+    obj.save((err, item) => {
+        console.log('item',item);
+      if (err && err.code === 11000) {
+        res.sendStatus(400);
+      }
+      if (err) {
+        return console.error(err);
+      }
+
+      res.json({'statusCode':200,'message':'Order save successfully',data:item});
+   });
+  }
+
+
+// Insert
+  exports.insertRates = (req, res) => {
+    const obj = new Rates(req.body);
+
     obj.save((err, item) => {
       // 11000 is the code for duplicate key error
       console.log('item',item);
@@ -163,7 +194,8 @@ exports.searchUser = (req, res) => {
       if (err) {
         return console.error(err);
       }
-      res.json({'statusCode':200,'message':'Order save successfully',data:item});
+
+      res.json({'statusCode':200,'message':'Rates save successfully',data:item});
     });
   }
 
@@ -174,3 +206,56 @@ exports.searchUser = (req, res) => {
       res.json(docs);
     });
   }
+
+
+  // Get by id
+  exports.getRates = (req, res) => {    
+    Rates.findOne({}, (err, obj) => {
+      if (err) { return console.error(err); }
+      res.json(obj);
+    });
+  }
+
+  exports.deleteRates = (req, res) => {    
+    Rates.remove({}, (err) => {
+      if (err) { return loggererror.info(err); }      
+      res.sendStatus(200);
+    })
+  }
+
+  // Update by id
+  exports.updateRates = (req, res) => {
+    Rates.findOneAndUpdate({ masterKey: req.body.masterKey }, req.body, (err) => {
+      if (err) { return res.json({status:'fail'});; }
+      res.status(200).json({status:'success'});
+    });
+  }
+
+
+  // Update by id
+  exports.changePassword = (req, res) => {
+    console.log('Body',req.body);
+
+     User.findOne({phoneNumber: req.body.phoneNumber,password:req.body.oldPassword},(err,user)=>{
+       console.log('user',user);
+        if (err) {  
+          
+          return res.json({status:'fail',err:err}); 
+        }
+        if(!user){
+            return res.json({status:'password is wrong'});
+        }
+        else{
+            User.update({ phoneNumber: req.body.phoneNumber}, {$set:{password:req.body.newPassword}}, (err) => {
+              if (err) { 
+                return res.json({status:'Update fail'});
+               }
+              res.status(200).json({status:'success'});
+            });
+        }        
+     });
+    
+    
+  }
+
+

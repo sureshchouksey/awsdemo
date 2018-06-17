@@ -25,5 +25,12 @@ module.exports = function (app) {
 
   // Apply the routes to our application with the prefix /api
   //app.use('/api', router);
-
+  app.route('/api/user/changePassword')
+        .post(userCtrl.changePassword);   
+  app.route('/api/insertRates')
+        .post(userCtrl.insertRates);
+  app.route('/api/getRates').get(userCtrl.getRates);
+  app.route('/api/deleteRates').delete(userCtrl.deleteRates);
+  app.route('/api/updateRates').put(userCtrl.updateRates);
+  
 }
