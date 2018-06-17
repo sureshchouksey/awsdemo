@@ -3,9 +3,12 @@
 let dotenv = require('dotenv');
 let jwt = require('jsonwebtoken');
 let User = require('../models/user');
+let Order = require('../models/order');
 let config = require('config');
 let mongoose = require('mongoose');
 let Nexmo = require('nexmo');
+let cc = require('coupon-code');
+var voucher_codes = require('voucher-code-generator');
 
 let nexmo = new Nexmo({
   apiKey: '49f4ee41',
@@ -33,7 +36,7 @@ exports.login = (req,res) =>{
   User.findOne({phoneNumber:phoneNumber,password:password},(err,user)=>{
          if(err) return next(err);
        if(!user) return res.send('Not logged in!');       
-       res.status(200).json({status:'success'});
+       res.json({'code':200,data:user});
   })
 }
 
@@ -67,6 +70,13 @@ exports.adminLogin = (req,res) =>{
 
   // Insert
   exports.insert = (req, res) => {
+    //var code = cc.generate();
+    var codeList = voucher_codes.generate({
+        length: 6,
+        count: 1
+    }); 
+    //console.log('coupon code',code);
+    req.body.couponCode = codeList[0];
     const obj = new User(req.body);
     obj.save((err, item) => {
       // 11000 is the code for duplicate key error
@@ -77,7 +87,7 @@ exports.adminLogin = (req,res) =>{
       if (err) {
         return console.error(err);
       }
-      res.json(item);
+      res.json({'code':200,data:item});
     });
   }
 
@@ -139,3 +149,28 @@ exports.searchUser = (req, res) => {
     res.json(docs);
   });
 }
+
+// Insert
+  exports.saveOrder = (req, res) => {
+ 
+    const obj = new Order(req.body);
+    obj.save((err, item) => {
+      // 11000 is the code for duplicate key error
+      console.log('item',item);
+      if (err && err.code === 11000) {
+        res.sendStatus(400);
+      }
+      if (err) {
+        return console.error(err);
+      }
+      res.json({'statusCode':200,'message':'Order save successfully',data:item});
+    });
+  }
+
+   // Get all
+  exports.getAllOrders = (req, res) => {
+    Order.find({}, (err, docs) => {
+      if (err) { return console.error(err); }
+      res.json(docs);
+    });
+  }

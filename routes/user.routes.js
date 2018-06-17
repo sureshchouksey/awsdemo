@@ -16,6 +16,11 @@ module.exports = function (app) {
         .post(userCtrl.searchUser);
   app.route('/api/user/sendMessage')
         .post(userCtrl.sendMessage);
+
+ app.route('/api/user/saveOrder')
+        .post(userCtrl.saveOrder);
+ app.route('/api/orders').get(userCtrl.getAllOrders);
+        
   //app.route('/api/user/deleteAll').delete(userCtrl.deleteAll);
 
   // Apply the routes to our application with the prefix /api

@@ -14,14 +14,17 @@
     "body-parser": "^1.15.1",
     "config": "^1.20.1",
     "cors": "^2.8.4",
+    "coupon-code": "^0.4.5",
     "dotenv": "^4.0.0",
     "express": "^4.13.4",
     "fcm-node": "^1.2.0",
     "jsonwebtoken": "^8.1.0",
     "log4js": "^2.3.11",
     "mongoose": "^4.4.15",
+    "mongoose-auto-increment": "^5.0.1",
     "morgan": "^1.7.0",
-    "nexmo": "^2.2.0"
+    "nexmo": "^2.2.0",
+    "voucher-code-generator": "^1.1.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",

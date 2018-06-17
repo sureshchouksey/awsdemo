@@ -1,6 +1,10 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
+let config = require('config');
+var autoIncrement = require('mongoose-auto-increment');
 
+var connection = mongoose.createConnection(config.DBHost)
+autoIncrement.initialize(connection);
 
 var userSchema = mongoose.Schema({
   firstName:{ type: String,trim: true,require:true,default:'' },
@@ -16,7 +20,9 @@ var userSchema = mongoose.Schema({
   city:{ type: String,trim: true,require:true,default:'' },
   state:{ type: String,trim: true,require:true,default:'' },
   role:{type:String},
-  couponCode:{type:String} 
+  couponCode:{type:String},
+  profilePic: {type:String}
+
   
 });
 
@@ -83,6 +89,8 @@ userSchema.set('toJSON', {
     return ret;
   }
 });
+
+userSchema.plugin(autoIncrement.plugin, { model: 'User', field: 'userId' });
 
 
 module.exports = mongoose.model('User', userSchema);
