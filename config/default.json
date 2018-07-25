@@ -5,4 +5,5 @@
 	//"DBHost"	: "mongodb://database/opusneodb",  // MongoDB in Docker
 	"SECRET_TOKEN":"catswillruletheworld",
 	"DBHost"	: "mongodb://sureshchouksey:suresh123@ds263988.mlab.com:63988/gwalaserver"
+	//"DBHost"	: "mongodb://admin:BHHTWCPZBPCAHIIQ@sl-eu-lon-2-portal.8.dblayer.com:25372,sl-eu-lon-2-portal.6.dblayer.com:25372/compose?authSource=admin&ssl=true/gwalaserver"
 }

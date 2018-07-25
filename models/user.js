@@ -25,6 +25,7 @@ var userSchema = mongoose.Schema({
   addressType:{type:String},
   quantityCapacity:{type:Number},
   milkType:{type:String} 
+  
 });
 
 // Before saving the user, hash the password

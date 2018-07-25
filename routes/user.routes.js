@@ -19,14 +19,20 @@ module.exports = function (app) {
 
  app.route('/api/user/saveOrder')
         .post(userCtrl.saveOrder);
- app.route('/api/orders').get(userCtrl.getAllOrders);
         
-  //app.route('/api/user/deleteAll').delete(userCtrl.deleteAll);
+app.route('/api/user/addOrder')
+        .post(userCtrl.addOrder);
+ app.route('/api/orders').get(userCtrl.getAllOrders);
 
+   app.route('/api/deleteOrder').delete(userCtrl.deleteOrder);
+        
+  app.route('/api/user/deleteAll').delete(userCtrl.deleteAll);
+ //app.route('/api/user/deleteAll').delete(userCtrl.deleteAll);
   // Apply the routes to our application with the prefix /api
   //app.use('/api', router);
   app.route('/api/user/changePassword')
         .post(userCtrl.changePassword);   
+
   app.route('/api/insertRates')
         .post(userCtrl.insertRates);
   app.route('/api/getRates').get(userCtrl.getRates);

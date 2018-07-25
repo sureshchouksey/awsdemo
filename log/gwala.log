@@ -1,0 +1,231 @@
+[2018-07-20T19:11:19.647] [ERROR] info - Get user Service: Internal server error ReferenceError: item is not defined
+    at exports.addOrder (D:\Angular\Mocha and Chai\awsdemo\awsdemo\controllers\user.js:265:56)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:275:10)
+    at cors (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:188:7)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:224:17
+    at originCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:214:15)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:317:13)
+[2018-07-20T19:11:54.066] [ERROR] info - Get user Service: Internal server error ReferenceError: item is not defined
+    at exports.addOrder (D:\Angular\Mocha and Chai\awsdemo\awsdemo\controllers\user.js:265:56)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:275:10)
+    at cors (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:188:7)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:224:17
+    at originCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:214:15)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:317:13)
+[2018-07-20T19:12:07.205] [ERROR] info - Get user Service: Internal server error ReferenceError: item is not defined
+    at exports.addOrder (D:\Angular\Mocha and Chai\awsdemo\awsdemo\controllers\user.js:265:56)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:275:10)
+    at cors (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:188:7)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:224:17
+    at originCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:214:15)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:317:13)
+[2018-07-20T19:13:09.949] [ERROR] info - Get user Service: Internal server error ReferenceError: item is not defined
+    at exports.addOrder (D:\Angular\Mocha and Chai\awsdemo\awsdemo\controllers\user.js:267:56)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:275:10)
+    at cors (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:188:7)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:224:17
+    at originCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:214:15)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:317:13)
+[2018-07-20T19:13:53.657] [INFO] info - Search result of getAll Service [ { _id: 5b50a2b66e90476414da4296,
+    userId: 5,
+    __v: 0,
+    orders: [ [Object], [Object] ] } ]
+[2018-07-20T19:14:17.428] [INFO] info - Search result of getAll Service [ { _id: 5b50a2b66e90476414da4296,
+    userId: 5,
+    __v: 0,
+    orders: [ [Object], [Object] ] } ]
+[2018-07-20T19:14:21.758] [ERROR] info - Get user Service: Internal server error ReferenceError: item is not defined
+    at exports.addOrder (D:\Angular\Mocha and Chai\awsdemo\awsdemo\controllers\user.js:267:56)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:275:10)
+    at cors (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:188:7)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:224:17
+    at originCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:214:15)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:317:13)
+[2018-07-20T19:14:44.837] [ERROR] info - Get user Service: Internal server error ReferenceError: item is not defined
+    at exports.addOrder (D:\Angular\Mocha and Chai\awsdemo\awsdemo\controllers\user.js:267:56)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:275:10)
+    at cors (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:188:7)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:224:17
+    at originCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:214:15)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:317:13)
+[2018-07-20T19:15:32.256] [ERROR] info - Get user Service: Internal server error ReferenceError: item is not defined
+    at exports.addOrder (D:\Angular\Mocha and Chai\awsdemo\awsdemo\controllers\user.js:267:79)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:275:10)
+    at cors (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:188:7)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:224:17
+    at originCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:214:15)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:317:13)
+[2018-07-20T19:20:35.298] [INFO] info - Search result of getAll Service []
+[2018-07-20T19:20:37.555] [INFO] info - add order
+[2018-07-20T19:20:46.017] [INFO] info - add order
+[2018-07-20T19:20:48.866] [INFO] info - Search result of getAll Service [ { _id: 5b51e8c16e90476414e0557a, userId: 6, __v: 0, orders: [] } ]
+[2018-07-20T19:21:39.443] [INFO] info - Search result of getAll Service []
+[2018-07-20T19:21:41.407] [ERROR] info - Get user Service: Internal server error ReferenceError: item is not defined
+    at exports.addOrder (D:\Angular\Mocha and Chai\awsdemo\awsdemo\controllers\user.js:267:79)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:275:10)
+    at cors (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:188:7)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:224:17
+    at originCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:214:15)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:219:13
+    at optionsCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:199:9)
+    at corsMiddleware (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:204:7)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:317:13)
+[2018-07-20T19:22:29.843] [INFO] info - add order
+[2018-07-20T19:22:32.364] [INFO] info - Search result of getAll Service [ { _id: 5b51e9316e90476414e0590f,
+    userId: 6,
+    __v: 0,
+    orders: [ [Object] ] } ]
+[2018-07-20T19:22:42.552] [INFO] info - add order
+[2018-07-20T19:22:45.249] [INFO] info - Search result of getAll Service [ { _id: 5b51e9316e90476414e0590f,
+    userId: 6,
+    __v: 0,
+    orders: [ [Object], [Object] ] } ]
+[2018-07-20T19:23:40.587] [INFO] info - Search result of getAll Service []
+[2018-07-20T19:23:51.763] [INFO] info - add order
+[2018-07-20T19:23:54.364] [INFO] info - Search result of getAll Service [ { _id: 5b51e9836e90476414e05ad8,
+    userId: 7,
+    __v: 0,
+    orders: [ [Object] ] } ]
+[2018-07-20T19:24:01.407] [INFO] info - add order
+[2018-07-20T19:24:04.262] [INFO] info - Search result of getAll Service [ { _id: 5b51e9836e90476414e05ad8,
+    userId: 7,
+    __v: 0,
+    orders: [ [Object], [Object] ] } ]
+[2018-07-20T19:24:52.622] [INFO] info - Search result of getAll Service []
+[2018-07-20T19:24:55.090] [INFO] info - add order
+[2018-07-20T19:25:00.552] [INFO] info - add order
+[2018-07-20T19:26:10.501] [INFO] info - Search result of getAll Service [ { _id: 5b51e9c36e90476414e05c44,
+    userId: 8,
+    __v: 0,
+    orders: [ [Object], [Object] ] } ]
+[2018-07-20T19:27:14.029] [INFO] info - add order
+[2018-07-20T19:27:30.464] [INFO] info - Search result of getAll Service [ { _id: 5b51ea4d6e90476414e05f36,
+    userId: 9,
+    __v: 0,
+    orders: [ [Object] ] } ]
+[2018-07-20T19:30:51.789] [INFO] info - add order
+[2018-07-20T19:30:54.492] [INFO] info - add order
+[2018-07-20T19:32:37.984] [INFO] info - Search result of getAll Service []
+[2018-07-20T19:32:39.828] [INFO] info - add order
+[2018-07-20T19:32:43.562] [INFO] info - Search result of getAll Service [ { _id: 5b51eb936e90476414e06590,
+    userId: 11,
+    __v: 0,
+    order: [ [Object] ] } ]
+[2018-07-20T19:33:27.655] [INFO] info - add order
+[2018-07-20T19:33:33.048] [INFO] info - Search result of getAll Service []
+[2018-07-20T19:33:37.339] [INFO] info - add order
+[2018-07-20T19:33:39.672] [INFO] info - Search result of getAll Service []
+[2018-07-20T19:34:06.387] [INFO] info - add order
+[2018-07-20T19:34:08.817] [INFO] info - Search result of getAll Service [ { _id: 5b51ebea6e90476414e06779,
+    userId: 12,
+    __v: 0,
+    order: [ [Object] ] } ]
+[2018-07-20T19:34:12.668] [INFO] info - add order
+[2018-07-20T19:34:14.904] [INFO] info - Search result of getAll Service [ { _id: 5b51ebea6e90476414e06779,
+    userId: 12,
+    __v: 0,
+    order: [ [Object], [Object] ] } ]
+[2018-07-20T19:41:23.344] [INFO] info - add order
+[2018-07-20T19:53:49.296] [INFO] info - add order
+[2018-07-20T19:53:52.378] [INFO] info - Search result of getAll Service [ { _id: 5b51f075ac62dfae68bf6334,
+    userId: 14,
+    __v: 0,
+    order: [ [Object] ] } ]
+[2018-07-20T19:53:57.220] [INFO] info - add order
+[2018-07-20T19:54:00.294] [INFO] info - Search result of getAll Service [ { _id: 5b51f075ac62dfae68bf6334,
+    userId: 14,
+    __v: 0,
+    order: [ [Object] ] },
+  { _id: 5b51f07dac62dfae68bf6339,
+    userId: 15,
+    __v: 0,
+    order: [ [Object] ] } ]
+[2018-07-20T19:54:54.469] [INFO] info - Search result of getAll Service []
+[2018-07-20T19:54:56.811] [INFO] info - add order
+[2018-07-20T19:57:42.280] [INFO] info - add order
+[2018-07-20T19:57:46.822] [INFO] info - add order
+[2018-07-20T19:57:50.601] [INFO] info - Search result of getAll Service [ { _id: 5b51f172b00a427a150ce95a,
+    userId: 16,
+    __v: 0,
+    order: [ [Object] ] },
+  { _id: 5b51f176b00a427a150ce9fe,
+    userId: 17,
+    __v: 0,
+    order: [ [Object] ] } ]

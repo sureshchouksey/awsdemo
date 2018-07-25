@@ -1,0 +1,5 @@
+---
+applications:
+ - name: IbmNodeDemo
+   random-route: true
+   memory: 256M
