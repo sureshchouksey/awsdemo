@@ -134,3 +134,165 @@
     at corsMiddleware (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:204:7)
     at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
     at trim_prefix (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:317:13)
+[2018-07-26T16:39:47.461] [ERROR] info - Get Agent Service: Database server error { MongoError: E11000 duplicate key error collection: gwalaserver.users index: phoneNumber_1 dup key: { : 9561508018.0 }
+    at Function.MongoError.create (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb-core\lib\error.js:31:11)
+    at toError (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\utils.js:139:22)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\collection.js:668:23
+    at handleCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\utils.js:120:56)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\bulk\unordered.js:465:9
+    at handleCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\utils.js:120:56)
+    at resultHandler (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\bulk\unordered.js:413:5)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb-core\lib\connection\pool.js:469:18
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  name: 'MongoError',
+  message: 'E11000 duplicate key error collection: gwalaserver.users index: phoneNumber_1 dup key: { : 9561508018.0 }',
+  driver: true,
+  code: 11000,
+  index: 0,
+  errmsg: 'E11000 duplicate key error collection: gwalaserver.users index: phoneNumber_1 dup key: { : 9561508018.0 }',
+  getOperation: [Function],
+  toJSON: [Function],
+  toString: [Function] }
+[2018-07-27T14:38:38.311] [ERROR] info - Get user Service: Internal server error Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+    at new ObjectID (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\bson\lib\bson\objectid.js:51:11)
+    at ObjectID [as ObjectId] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\bson\lib\bson\objectid.js:32:43)
+    at exports.getAgentById (D:\Angular\Mocha and Chai\awsdemo\awsdemo\controllers\user.js:474:40)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:281:22
+    at param (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:354:14)
+    at param (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:410:3)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:275:10)
+    at cors (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:188:7)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:224:17
+    at originCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:214:15)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:219:13
+[2018-07-27T14:56:47.965] [ERROR] info - Get user Service: Database server error { MongoError: E11000 duplicate key error collection: gwalaserver.users index: phoneNumber_1 dup key: { : 9561508016.0 }
+    at Function.MongoError.create (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb-core\lib\error.js:31:11)
+    at toError (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\utils.js:139:22)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\collection.js:668:23
+    at handleCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\utils.js:120:56)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\bulk\unordered.js:465:9
+    at handleCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\utils.js:120:56)
+    at resultHandler (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\bulk\unordered.js:413:5)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb-core\lib\connection\pool.js:469:18
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  name: 'MongoError',
+  message: 'E11000 duplicate key error collection: gwalaserver.users index: phoneNumber_1 dup key: { : 9561508016.0 }',
+  driver: true,
+  code: 11000,
+  index: 0,
+  errmsg: 'E11000 duplicate key error collection: gwalaserver.users index: phoneNumber_1 dup key: { : 9561508016.0 }',
+  getOperation: [Function],
+  toJSON: [Function],
+  toString: [Function] }
+[2018-07-27T17:17:38.984] [ERROR] info - Get Agent Service: Database server error { ValidationError: Agent validation failed: pan: Cast to Number failed for value "AKDPC3648M" at path "pan"
+    at ValidationError.inspect (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongoose\lib\error\validation.js:57:23)
+    at formatValue (util.js:430:38)
+    at inspect (util.js:324:10)
+    at Object.format (util.js:191:12)
+    at Object.inspect (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\log4js\lib\layouts.js:36:66)
+    at formatValue (util.js:430:38)
+    at inspect (util.js:324:10)
+    at Object.format (util.js:253:18)
+    at formatLogData (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\log4js\lib\layouts.js:55:22)
+    at basicLayout (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\log4js\lib\layouts.js:118:7)
+    at app (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\log4js\lib\appenders\file.js:55:18)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\log4js\lib\appenders\logLevelFilter.js:9:7
+    at appenders.forEach (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\log4js\lib\log4js.js:142:5)
+    at Array.forEach (<anonymous>)
+    at Logger.sendLogEventToAppender [as dispatch] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\log4js\lib\log4js.js:141:13)
+    at Logger._log (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\log4js\lib\logger.js:95:12)
+  errors: 
+   { pan: 
+      { CastError: Cast to Number failed for value "AKDPC3648M" at path "pan"
+    at new CastError (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongoose\lib\error\cast.js:27:11)
+    at model.$set (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongoose\lib\document.js:773:7)
+    at model._handleIndex (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongoose\lib\document.js:594:14)
+    at model.$set (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongoose\lib\document.js:554:24)
+    at model.Document (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongoose\lib\document.js:83:12)
+    at model.Model (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongoose\lib\model.js:56:12)
+    at new model (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongoose\lib\model.js:3928:13)
+    at exports.addAgent (D:\Angular\Mocha and Chai\awsdemo\awsdemo\controllers\user.js:448:21)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\express\lib\router\index.js:275:10)
+    at cors (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\cors\lib\index.js:188:7)
+        message: 'Cast to Number failed for value "AKDPC3648M" at path "pan"',
+        name: 'CastError',
+        stringValue: '"AKDPC3648M"',
+        kind: 'Number',
+        value: 'AKDPC3648M',
+        path: 'pan',
+        reason: [Object] } },
+  _message: 'Agent validation failed',
+  name: 'ValidationError' }
+[2018-07-27T17:30:36.289] [ERROR] info - Get user Service: Database server error { MongoError: E11000 duplicate key error collection: gwalaserver.users index: phoneNumber_1 dup key: { : 9561508019.0 }
+    at Function.MongoError.create (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb-core\lib\error.js:31:11)
+    at toError (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\utils.js:139:22)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\collection.js:668:23
+    at handleCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\utils.js:120:56)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\bulk\unordered.js:465:9
+    at handleCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\utils.js:120:56)
+    at resultHandler (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\bulk\unordered.js:413:5)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb-core\lib\connection\pool.js:469:18
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  name: 'MongoError',
+  message: 'E11000 duplicate key error collection: gwalaserver.users index: phoneNumber_1 dup key: { : 9561508019.0 }',
+  driver: true,
+  code: 11000,
+  index: 0,
+  errmsg: 'E11000 duplicate key error collection: gwalaserver.users index: phoneNumber_1 dup key: { : 9561508019.0 }',
+  getOperation: [Function],
+  toJSON: [Function],
+  toString: [Function] }
+[2018-07-27T17:47:08.471] [ERROR] info - Get Coupon Service: Database server error { MongoError: E11000 duplicate key error collection: gwalaserver.coupons index: code_1 dup key: { : "DIW200" }
+    at Function.MongoError.create (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb-core\lib\error.js:31:11)
+    at toError (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\utils.js:139:22)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\collection.js:668:23
+    at handleCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\utils.js:120:56)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\bulk\unordered.js:465:9
+    at handleCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\utils.js:120:56)
+    at resultHandler (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\bulk\unordered.js:413:5)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb-core\lib\connection\pool.js:469:18
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  name: 'MongoError',
+  message: 'E11000 duplicate key error collection: gwalaserver.coupons index: code_1 dup key: { : "DIW200" }',
+  driver: true,
+  code: 11000,
+  index: 0,
+  errmsg: 'E11000 duplicate key error collection: gwalaserver.coupons index: code_1 dup key: { : "DIW200" }',
+  getOperation: [Function],
+  toJSON: [Function],
+  toString: [Function] }
+[2018-07-27T17:50:02.295] [ERROR] info - Get user Service: Database server error { MongoError: E11000 duplicate key error collection: gwalaserver.users index: phoneNumber_1 dup key: { : 9561508019.0 }
+    at Function.MongoError.create (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb-core\lib\error.js:31:11)
+    at toError (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\utils.js:139:22)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\collection.js:668:23
+    at handleCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\utils.js:120:56)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\bulk\unordered.js:465:9
+    at handleCallback (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\utils.js:120:56)
+    at resultHandler (D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb\lib\bulk\unordered.js:413:5)
+    at D:\Angular\Mocha and Chai\awsdemo\awsdemo\node_modules\mongodb-core\lib\connection\pool.js:469:18
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+  name: 'MongoError',
+  message: 'E11000 duplicate key error collection: gwalaserver.users index: phoneNumber_1 dup key: { : 9561508019.0 }',
+  driver: true,
+  code: 11000,
+  index: 0,
+  errmsg: 'E11000 duplicate key error collection: gwalaserver.users index: phoneNumber_1 dup key: { : 9561508019.0 }',
+  getOperation: [Function],
+  toJSON: [Function],
+  toString: [Function] }

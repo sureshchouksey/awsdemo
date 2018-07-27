@@ -1,10 +1,11 @@
 
-
 let dotenv = require('dotenv');
 let jwt = require('jsonwebtoken');
 let User = require('../models/user');
+let Agent = require('../models/agent');
 let Order = require('../models/order');
 let Rates = require('../models/rates');
+let Coupon = require('../models/coupon');
 
 let config = require('config');
 let mongoose = require('mongoose');
@@ -93,8 +94,6 @@ exports.adminLogin = (req,res) =>{
         res.status(200).json(resultData);
   })
 }
-
-
 
   // Get all
   exports.getAll = (req, res) => {
@@ -293,8 +292,10 @@ exports.deleteOrder = (req, res) => {
 
 
   exports.saveOrder = (req, res) => {
+    console.log('saveOrder',req.body);
      try{
         const obj = new Order(req.body);
+        console.log('obj',obj);
         obj.save((err, item) => {
             console.log('item',item);
           if (err && err.code === 11000) {
@@ -327,6 +328,22 @@ exports.deleteOrder = (req, res) => {
       res.json({code:500,err:err,message:'Get user Service Internal server error'});
     } 
   }
+
+  exports.searchOrder = (req, res) => {
+  try{
+      //loggerinfo.info('Request body of searchUseer Service',req.body);
+      let searchAgent = req.body;
+      Order.find(searchAgent, (err, docs) => {
+        if (err) { return loggererror.info(err); }
+        //loggerinfo.info('Search result based on device',docs);
+        res.json({code:200,data:docs});
+      });
+  } 
+  catch(err){
+    loggerinfo.error('Get Agent Service: Internal server error',err);
+    res.json({code:500,err:err,message:'Get Agent Service Internal server error'});
+  }
+}
 
 
 // Insert
@@ -393,17 +410,13 @@ exports.deleteOrder = (req, res) => {
 
   }
 
-
   // Update by id
   exports.changePassword = (req, res) => {
-
     try{
-    
       console.log('Body',req.body);
       User.findOne({phoneNumber: req.body.phoneNumber,password:req.body.oldPassword},(err,user)=>{
         console.log('user',user);
-          if (err) {  
-            
+          if (err) {
             return res.json({status:'fail',err:err}); 
           }
           if(!user){
@@ -426,5 +439,161 @@ exports.deleteOrder = (req, res) => {
         
     
   }
+
+
+   // Insert
+  exports.addAgent = (req, res) => {
+     try{
+        loggerinfo.info('Request body of Registration Service',req.body);        
+        const obj = new Agent(req.body);
+        obj.save((err, item) => {
+          // 11000 is the code for duplicate key error
+          console.log('item',item);         
+          if (err) {
+             console.log('item',err);
+             loggerinfo.error('Get Agent Service: Database server error',err);
+             res.json({code:500,'status':'error','err':err});
+          }
+          else{
+            res.json({'code':200,data:item});
+          }          
+        });        
+    } 
+    catch(err){
+      loggerinfo.error('Get Agent Service: Internal server error',err);
+      res.json({code:500,err:err,message:'Get Agent Service Internal server error'});
+    } 
+  }
+
+    // Insert
+  exports.updateAgent = (req, res) => {
+     try{
+        loggerinfo.info('Request body of Registration Service',req.body);                       
+        let query = { "agentId": req.body.agentId};
+        Agent.findOneAndUpdate(query, req.body, { upsert: true }, (err) => {
+          if (err) { return loggererror.info(err); }
+          loggerinfo.info('New device successfully register for FCM');
+          res.sendStatus(200);
+        });
+    } 
+    catch(err){
+      loggerinfo.error('Get Agent Service: Internal server error',err);
+      res.json({code:500,err:err,message:'Get Agent Service Internal server error'});
+    } 
+  }
+
+   // Delete by id
+  exports.getAgentById = (req, res) => {
+    try{
+      console.log( req.params.id );
+      Agent.find({ agentId: req.params.id}, (err,item) => {
+        if (err) { return console.error(err); }
+         res.json({'code':200,data:item});
+      });
+    } 
+    catch(err){
+      loggerinfo.error('Get user Service: Internal server error',err);
+       res.json({code:500,err:err,message:'Get user Service Internal server error'});
+    }
+  }
+
+  // Get all
+  exports.getAllAgents = (req, res) => {
+     try{
+          Agent.find({}, (err, docs) => {
+            if (err) { return console.error(err); }
+            loggerinfo.info("Search result of getAllAgents Service", docs);
+            res.json({code:200,data:docs});
+          });
+    } 
+    catch(err){
+      loggerinfo.error('Get Agent Service: Internal server error',err);
+      res.json({code:500,err:err,message:'Get Agent Service Internal server error'});
+    } 
+  }
+
+  exports.searchAgent = (req, res) => {
+  try{
+      //loggerinfo.info('Request body of searchUseer Service',req.body);
+      let searchAgent = req.body;
+      Agent.find(searchAgent, (err, docs) => {
+        if (err) { return loggererror.info(err); }
+        //loggerinfo.info('Search result based on device',docs);
+        res.json({code:200,data:docs});
+      });
+  } 
+  catch(err){
+    loggerinfo.error('Get Agent Service: Internal server error',err);
+    res.json({code:500,err:err,message:'Get Agent Service Internal server error'});
+  }
+}
+
+ exports.deleteAgent = (req, res) => {
+    try{
+      Agent.remove({}, (err) => {
+        if (err) { return loggererror.info(err); }      
+        res.sendStatus(200);
+      })
+    } 
+    catch(err){
+      loggerinfo.error('Get Agent Service: Internal server error',err);
+      res.json({code:500,err:err,message:'Get Agent Service Internal server error'});
+    } 
+  }
+
+exports.addCoupon = (req, res) => {
+     try{
+        loggerinfo.info('Request body of Registration Service',req.body);        
+        const obj = new Coupon(req.body);
+        obj.save((err, item) => {
+          // 11000 is the code for duplicate key error
+          console.log('item',item);
+         
+          if (err) {
+             console.log('item',err);
+             loggerinfo.error('Get Coupon Service: Database server error',err);
+             res.json({code:500,'status':'error','err':err});
+          }
+          else{
+            res.json({'code':200,data:item});
+          }
+          
+        });
+    } 
+    catch(err){
+      loggerinfo.error('Get Coupon Service: Internal server error',err);
+      res.json({code:500,err:err,message:'Get Coupon Service Internal server error'});
+    } 
+  }
+
+  exports.deleteCoupons = (req, res) => {
+    try{
+      Coupon.remove({}, (err) => {
+        if (err) { return loggererror.info(err); }      
+        res.sendStatus(200);
+      })
+    } 
+    catch(err){
+      loggerinfo.error('Get Coupon Service: Internal server error',err);
+      res.json({code:500,err:err,message:'Get Coupon Service Internal server error'});
+    } 
+  }
+
+  // Get all
+  exports.getAllCoupons = (req, res) => {
+     try{
+          Coupon.find({}, (err, docs) => {
+            if (err) { return console.error(err); }
+            loggerinfo.info("Search result of getAllCoupons Service", docs);
+            res.json({code:200,data:docs});
+          });
+    } 
+    catch(err){
+      loggerinfo.error('Get Coupon Service: Internal server error',err);
+      res.json({code:500,err:err,message:'Get Coupon Service Internal server error'});
+    } 
+  }
+
+
 
 
